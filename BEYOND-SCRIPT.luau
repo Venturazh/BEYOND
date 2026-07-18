@@ -682,6 +682,10 @@ local FreeCam = CharacterTab:NewToggle("Enable Freecam", false, function(value)
     end
 end):AddKeybind(Enum.KeyCode.C)
 
+local CameraTp = CharacterTab:NewKeybind("Tp To Camera", Enum.KeyCode.N, function(key)
+    RootPart.CFrame = Camera.CFrame
+end)
+
 CharacterTab:NewSection("Movement Config")
 DropDowns.SpeedMethod = CharacterTab:NewSelector("Speed Method", "Velocity", {"WalkSpeed", "Velocity"}, function(d) Defaults.Method.Speed = d end)
 Sliders.SpeedSlider = CharacterTab:NewSlider("Speed Value", "", true, "/", {min = Humanoid.WalkSpeed or 16, max = 100, default =  Humanoid.WalkSpeed or 16})
